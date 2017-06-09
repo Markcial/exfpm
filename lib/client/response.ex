@@ -20,14 +20,15 @@ defmodule Exfpm.Client.Response do
     end
 
     def new(id, content, duration) do
-        [raw_headers, body] = String.split(content, <<10,10>>)
+        IO.puts content
+        IO.inspect String.split(content, "\n\n")
         
-        %__MODULE__{
-            id: id,
-            raw: content,
-            duration: duration,
-            headers: parse_headers(raw_headers),
-            body: body,
-        }
+        #%__MODULE__{
+        #    id: id,
+        #    raw: content,
+        #    duration: duration,
+        #    headers: parse_headers(raw_headers),
+        #    body: body,
+        #}
     end
 end
